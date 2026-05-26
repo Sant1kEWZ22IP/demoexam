@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Rubik;
+    src: url('../fonts/Rubik/static/Rubik-Regular.ttf');
+}
+* {
+  font-family: Rubik, 'sans-serif';
+  padding: 0;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 550;
+  margin:0;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+label {
+  font-size: 16px;
+}
+
+input, button, select {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+input {
+  font-size: 12px;
+}
