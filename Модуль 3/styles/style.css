@@ -1,0 +1,409 @@
+  @font-face {
+    font-family: Rubik;
+    src: url('../fonts/Rubik/static/Rubik-Regular.ttf');
+  }
+*{
+  font-family: Rubik, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  background:linear-gradient(#fff 10%, #4CCFE0 80%);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  
+}
+.header{
+  padding:10px 5%;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+.nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+.logo{
+  font-size:clamp(1.4rem, 4vw, 1.8rem);
+  font-weight:bold;
+  color:#333;
+  text-decoration:none;
+}
+
+.logo img {
+  max-width: 60px;
+  max-height: 60px;
+}
+.nav-buttons{
+  display:flex;
+  gap:0.8rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+/*Общие стили кнопок*/
+.btn-sub,.btn-login,.btn-register,.btn-admin,.btn-create,.btn-lk,.btn-active,.btn-exit{
+  padding:0.5rem 1.2rem;
+  font-size:0.9rem;
+  border-radius:25px;
+  text-decoration:none;
+  transition:all 0.3s ease;
+  border:2px solid #007BFF;
+  color:black;
+  text-align:center;
+  white-space:nowrap;
+}
+.btn-sub{
+  background:#007BFF;
+  color:white;
+  border:none;
+  width:100%;
+  margin-top:10px;
+  padding:0.75rem;
+  border-radius:8px;
+}
+/* .btn-active{background:#f2e9d5;} */
+.btn-exit{
+  background:#FF6347;
+  border:2px solid black;
+}
+.btn-login:hover,.btn-register:hover,.btn-admin:hover,.btn-create:hover,.btn-lk:hover{
+  background:#007BFF;
+}
+/*Основные контейнеры*/
+.container{
+  width:90%;
+  max-width:700px;
+  margin:0 auto;
+  padding:1.5rem 1rem;
+}
+.admin-card,.booking-card{
+  border: 2px solid;
+  border-radius: 20px;
+  box-shadow:5px 5px 15px rgba(0,0,0,0.1);
+  padding:1.5rem;
+  margin-bottom:16rem;
+}
+
+.booking-card textarea {
+  width: 100%;
+}
+.admin-header,.booking-header{
+  text-align:center;
+  margin-bottom:1.5rem;
+}
+.request-card{
+  border: 2px solid;
+  border-radius:10px;
+  padding:1.2rem;
+  margin-bottom:1.2rem;
+}
+/*Формы*/
+.body-form{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+}
+.login-container,.register-container{
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  padding:1.5rem;
+  width:100%;
+  max-width:45%;
+  margin:1rem auto;
+}
+/*Поля ввода*/
+label,b{
+  display:block;
+  margin:0.75rem 0 0.5rem;
+  font-size:0.95rem;
+}
+input,select{
+  width:100%;
+  padding:0.75rem;
+  /* border:2px solid #e1e1e1; */
+  border-radius:8px;
+  font-size:1rem;
+  transition:border-color 0.3s ease;
+}
+input:focus,select:focus{
+  outline:none;
+  /* border-color:#667eea; */
+}
+/*Ссылки*/
+.index-link,.login-link,.register-link{
+  text-decoration:none;
+  color:#666;
+  transition:0.1s ease;
+  font-size:0.95rem;
+}
+/* .login-link,.register-link{color:#667eea;} */
+/* .index-link:hover,.login-link:hover,.register-link:hover{color:#5a6fd8;} */
+/*Текст*/
+.body-form p,.body-form h1{
+  margin-top:10px;
+  text-align:center;
+}
+.body-form h1{
+  font-size:clamp(1.5rem, 5vw, 2rem);
+}
+.no-requests{
+  text-align:center;
+  padding:2rem 1rem;
+  color:#666;
+  font-size:1.1rem;
+}
+/* Стили для ошибок валидации */
+.error-text {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+input.error-border {
+    border: 1px solid red;
+}
+.general-error {
+    color: red;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #ffe6e6;
+    border-radius: 5px;
+}
+.success-message {
+    color: green;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #e6ffe6;
+    border-radius: 5px;
+}
+/* Стили для фильтрации */
+.filter-form {
+    /* background: #f5f5f5; */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.filter-group input, 
+.filter-group select {
+    padding: 8px 12px;
+    /* border: 1px solid #ddd; */
+    border-radius: 5px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+.filter-group button {
+    padding: 8px 20px;
+    /* background: #007bff; */
+    /* color: white; */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* 
+.filter-group button:hover {
+    background: #0056b3;
+} */
+
+.filter-group .reset-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #6c757d;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* .filter-group .reset-btn:hover {
+    background: #5a6268;
+} */
+
+.filter-info {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #e3f2fd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* ===== СТИЛИ ДЛЯ ФУТЕРА ===== */
+
+/* Общие стили для футера */
+.footer {
+    background: #6C757D;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* Маленький футер */
+.footer-small {
+  margin-top: auto;
+  padding: 0;
+  margin:0;
+}
+
+.footer-small-content {
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Большой футер для главной страницы */
+.footer-main {
+    padding: 40px 0 20px 0;
+}
+
+.footer-main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid #4CCFE0;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #4CCFE0;
+}
+
+.footer-section a {
+    color: #4CCFE0;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: #4CCFE0;
+    margin-top: 10px;
+}
+
+.footer-section img {
+  max-width: 120px;
+  max-height: 100px;
+}
+
+/* Для страниц с формой, чтобы футер не прилипал */
+.body-form {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.body-form .footer {
+    margin-top: auto;
+}
+@media (max-width:480px){
+  .nav{
+    flex-direction:column;
+    text-align:center;
+  }
+  .nav-buttons{
+    justify-content:center;
+    width:100%;
+  }
+  .no-requests{
+    padding:3rem;
+  }
+  .admin-card,.booking-card{
+    padding:2rem;
+    margin-bottom:2rem;
+  }
+  .container{
+    padding:2rem;
+  }
+  .request-card{
+    padding:1.5rem;
+    margin-bottom:1.5rem;
+  }
+  .btn-sub,.btn-login,.btn-register,.btn-admin,.btn-create,.btn-lk,.btn-active,.btn-exit{
+    padding:0.4rem 1rem;
+    font-size:0.85rem;
+  }
+  .login-container,.register-container{
+    padding:2rem;
+    max-width:400px;
+  }
+  .register-container{
+    max-width:500px;
+  }
+  input,select{
+    padding:0.65rem;
+    font-size:0.95rem;
+  }
+  .header{
+    padding:10px 3%;
+  } 
+  .nav-buttons{
+    gap:0.5rem;
+  }
+  .admin-card,.booking-card{
+    border-radius:12px;
+    padding:1.2rem;
+  }
+  .footer-main-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section h3 {
+      display: block;
+      text-align: center;
+  }
+
+  .footer-section {
+      min-width: auto;
+  }
+
+
+}
